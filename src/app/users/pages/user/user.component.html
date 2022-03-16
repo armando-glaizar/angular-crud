@@ -1,0 +1,24 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1 class="text-center">Usuario</h1>
+
+            <form (ngSubmit)="createUser()" [formGroup]="userForm">   
+                <div class="form-group">
+                    <label>Usuario</label>
+                    <input type="text" class="form-control" placeholder="" formControlName="usuario">
+                </div>
+
+                <div class="form-group">
+                    <label>Rol</label>
+                    
+                    <select class="form-control" formControlName="rol">
+                        <option *ngFor="let rol of roles" [ngValue]="rol.payload.doc.id">{{ rol.payload.doc.get('rol') }}</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-4">Guardar</button>
+            </form>
+        </div>
+    </div>
+</div>

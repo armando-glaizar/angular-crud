@@ -1,0 +1,30 @@
+<div class="container mt-5">
+    <h1 class="float-left">Usuarios</h1>
+    <button type="button" class="btn btn-outline-success float-right" [routerLink]="['/usuarios/usuario']">Agregar usuario</button>
+
+    <input type="text" class="form-control" placeholder="Buscar" [(ngModel)]="searchValue">
+
+    <div class="table-responsive">
+        <table class="table mt-5">
+            <thead>
+                <tr class="table-active">
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Rol</th>
+                    <th scope="col">Opciones</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr *ngFor="let user of users | search: searchValue">
+                    <td>
+                        <a [routerLink]="['/usuarios/usuario']" [queryParams]="{ userId: user.payload.doc.id, usuario: user.payload.doc.get('usuario'), rolId: user.payload.doc.get('rol') }">{{ user.payload.doc.get('usuario') }}</a>
+                    </td>
+                    <td>{{ user.payload.doc.get('rol') == 0 ? "root" : "admin" }}</td>
+                    <td>
+                        <button type="button" class="btn btn-outline-danger btn-sm" (click)="deleteUser(user.payload.doc.id)">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

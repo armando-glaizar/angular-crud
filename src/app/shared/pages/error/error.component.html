@@ -1,0 +1,11 @@
+<div class="d-flex h-100 text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <main class="px-3">
+            <h1>Ocurrió un error</h1>
+            <p class="lead">El usuario no se encuentra registrado</p>
+            <p class="lead">
+                <a class="btn btn-lg btn-secondary fw-bold border-dark bg-white" (click)="navigateHomePage()">{{ errorType == "Microsoft" ? "Cerrar Sesión" : "Regresar" }}</a>
+            </p>
+        </main>  
+    </div>
+</div>

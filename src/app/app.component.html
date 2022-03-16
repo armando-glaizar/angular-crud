@@ -1,0 +1,41 @@
+<div class="container-fluid fixed-top bg-dark py-3" *ngIf="isSignIn()">
+    <div class="row collapse show no-gutters d-flex h-100 position-relative">
+        <div class="col-3 px-0 w-sidebar navbar-collapse collapse d-none d-md-flex">
+    
+        </div>
+
+        <div class="col px-3 px-md-0">
+            <a data-toggle="collapse" href="#" data-target=".collapse" role="button" class="p-1">
+                <i class="fa fa-bars fa-lg"></i>
+            </a>
+
+            <a class="navbar-brand ml-5" [routerLink]="['/usuarios']">
+                <img src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+                CRUD
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid px-0 h-100">
+    <div class="row vh-100 collapse show no-gutters d-flex h-100 position-relative">
+        <div class="col-3 p-0 vh-100 h-100 text-white w-sidebar navbar-collapse collapse d-none d-md-flex sidebar" *ngIf="isSignIn()">
+            <div class="navbar-dark bg-dark position-fixed h-100 w-sidebar">
+                <h6 class="px-3 pt-3">Menú</h6>
+                
+                <ul class="nav flex-column flex-nowrap text-truncate">
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/usuarios']">Usuarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="cursor: pointer;" (click)="signOut()">Cerrar sesión</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col p-3">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<main class="form-signin text-center mt-5">
+    <form>
+        <img class="mb-4" src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+        <h1 class="h3 mb-3 fw-normal">CRUD</h1>
+        
+        <input type="email" id="inputEmail" class="form-control" placeholder="Nombre de usuario" required autofocus>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
+        
+        <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">Iniciar sesión</button>
+        
+        <hr><div class="btn-group w-100">
+            <button type="button" class="btn btn-outline-danger btn-sm" (click)="signInWithGoogle()">Google</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm" (click)="signInWithMicrosoft()">Microsoft</button>
+        </div>
+
+        <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
+    </form>
+</main>
